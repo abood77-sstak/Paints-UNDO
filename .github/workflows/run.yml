@@ -17,10 +17,11 @@
            with:
              python-version: '3.x'
          - name: Install NVIDIA Driver
-           run: |
-             sudo apt update
-             sudo apt install nvidia-driver# Replace with your required driver version
-             
+            apt update
+            apt install nvidia-cuda-toolkit
+            pip install nvidia-pyindex --upgrade
+            python -m pip install --upgrade pip
+       
          
          - name: Install dependencies 
            run: |             
