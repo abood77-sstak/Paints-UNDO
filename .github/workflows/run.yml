@@ -19,9 +19,7 @@
          - name: Install NVIDIA Driver
            run: |
               sudo apt update
-              sudo apt install nvidia-cuda-toolkit
-              pip install nvidia-pyindex --upgrade
-              python -m pip install --upgrade pip
+              sudo apt install nvidia-driver-470 # Replace with your required driver version
 
          - name: Install dependencies 
            run: |             
