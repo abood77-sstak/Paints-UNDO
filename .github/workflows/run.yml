@@ -19,7 +19,7 @@
          - name: Install NVIDIA Driver
            run: |
              sudo apt update
-             sudo apt install nvidia-driver-520# Replace with your required driver version
+             sudo apt install nvidia-driver# Replace with your required driver version
              
          
          - name: Install dependencies 
