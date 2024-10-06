@@ -14,16 +14,10 @@ jobs:
 
          - name: Set up Python
            uses: actions/setup-python@v4
+         - name: Set up container with NVIDIA support
+           uses: docker://nvidia/cuda:11.4.0-cudnn8-runtime-ubuntu20.04
            with:
-             python-version: '3.x'
-         - name: Set up CUDA
-           uses: nvidia/setup-gpu@v1
-           with:
-             version: '11.4' # Specify the version of CUDA you need
-          
-         - name: Install dependencies 
-           run: |             
-             pip install xformers
-             pip install -r requirements.txt
-         - name: run script
-           run: python gradio_app.py
+            args: |
+                 /bin/bash -c "pip install xformers &&
+                 pip install -r requirements.txt &&
+                 python gradio_app.py"
