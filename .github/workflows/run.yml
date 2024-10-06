@@ -18,9 +18,11 @@
              python-version: '3.x'
          - name: Install NVIDIA Driver
            run: |
-            sudo apt update
-            sudo apt install nvidia-driver-545.84
-         
+              sudo apt update
+              sudo apt install nvidia-cuda-toolkit
+              pip install nvidia-pyindex --upgrade
+              python -m pip install --upgrade pip
+
          - name: Install dependencies 
            run: |             
              pip install xformers
