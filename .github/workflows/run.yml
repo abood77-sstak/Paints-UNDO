@@ -21,8 +21,7 @@
              sudo apt update
              sudo apt install nvidia-driver-470 # Replace with your required driver version
 
-         - name: Verify NVIDIA Driver
-           run: nvidia-smi
+         
          - name: Install dependencies 
            run: |             
              pip install xformers
