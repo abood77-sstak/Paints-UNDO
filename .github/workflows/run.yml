@@ -1,4 +1,4 @@
-   name: Run Python Script
+name: Run Python Script
    
    on:
      push:
@@ -16,15 +16,14 @@
            uses: actions/setup-python@v4
            with:
              python-version: '3.x'
-         - name: Install NVIDIA Driver
-           run: |
-              sudo apt update
-              sudo apt install nvidia-driver-470 # Replace with your required driver version
-
+         - name: Set up CUDA
+           uses: nvidia/setup-gpu@v1
+           with:
+             version: '11.4' # Specify the version of CUDA you need
+          
          - name: Install dependencies 
            run: |             
              pip install xformers
              pip install -r requirements.txt
-
          - name: run script
            run: python gradio_app.py
