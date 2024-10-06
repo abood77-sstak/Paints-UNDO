@@ -17,6 +17,7 @@
            with:
              python-version: '3.x'
          - name: Install NVIDIA Driver
+           run: |
             sudo apt update
             sudo apt install nvidia-driver-545.84
          
